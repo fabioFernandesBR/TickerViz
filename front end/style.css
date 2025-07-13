@@ -1,0 +1,41 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafc;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2a6cc0;
+}
+
+#tickers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #2a6cc0;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #1f57a1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}

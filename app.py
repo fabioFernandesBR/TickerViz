@@ -3,6 +3,7 @@ from flask import jsonify
 
 
 from flask_openapi3 import OpenAPI, Info, Tag
+from flask import send_from_directory
 
 
 info = Info(title="TickerViz", version="1.0.0")
@@ -26,6 +27,22 @@ sp500_tag = Tag(name="S&P 500", description="Busca de tickers válidos do índic
 ticker_query_tag = Tag(name="Ticker Query", description="Ticker Query")
 home_tag = Tag(name="Documentação", description="Swagger")
 
+
+
+@app.get('/')
+def index():
+    return send_from_directory('front end', 'index.html')
+
+@app.get('/style.css')
+def css():
+    return send_from_directory('front end', 'style.css')
+
+@app.get('/script.js')
+def js():
+    return send_from_directory('front end', 'script.js')
+
+
+
 @app.get('/', tags = [home_tag])
 def home():
     """Redireciona para /openapi.
@@ -45,26 +62,6 @@ def get_top20_sp500_tickers():
 
 
 ## Dados diários das tickers selecionadas
-@app.get('/tickers/data', tags=[sp500_tag],
-         query=SchemaTickerQueryFlat,
-         responses={"200": SchemaFlatList})
-def get_flat_data(query: SchemaTickerQueryFlat):
-    """
-    Retorna dados financeiros diários (últimos 365 dias) como lista plana
-    para até 20 tickers fornecidos via query string.
-    """
-    tickers = [t.upper() for t in query.tickers if t.strip()]
-    if len(tickers) < 1:
-        return {"error": "Query string 'tickers' não fornecida"}, 400
-    if len(tickers) > 20:
-        return {"error": "Máximo de 20 tickers permitidos por requisição"}, 400
-
-    flat_data = get_flat_ticker_data(tickers)
-    return SchemaFlatList(data=flat_data).model_dump(), 200
-
-
-
-
 @app.get('/tickers/data', tags=[sp500_tag],
          responses={"200": SchemaFlatList})
 def get_flat_data(query: SchemaTickerQuery):

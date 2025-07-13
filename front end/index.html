@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>TickerViz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>TickerViz 📈</h1>
+
+  <section id="ticker-list">
+    <h2>Selecionar Tickers</h2>
+    <div id="tickers-container"></div>
+    <button onclick="loadTickerData()">📥 Carregar Dados</button>
+    <button onclick="recarregarDados()">🔄 Recarregar</button>
+  </section>
+
+  <section id="charts">
+    <h2>Gráficos</h2>
+    <div class="grid">
+      <div id="chart-open"></div>
+      <div id="chart-close"></div>
+      <div id="chart-high"></div>
+      <div id="chart-low"></div>
+      <div id="chart-volume"></div>
+      <div id="chart-open-pct"></div>
+      <div id="chart-close-pct"></div>
+      <div id="chart-high-pct"></div>
+      <div id="chart-low-pct"></div>
+      <div id="chart-volume-pct"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
