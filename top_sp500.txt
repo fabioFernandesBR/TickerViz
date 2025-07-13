@@ -1,0 +1,20 @@
+AAPL: Apple Inc.
+MSFT: Microsoft Corporation
+NVDA: NVIDIA Corporation
+AMZN: Amazon.com, Inc.
+META: Meta Platforms, Inc.
+AVGO: Broadcom Inc.
+GOOGL: Alphabet Inc. (Class A)
+GOOG: Alphabet Inc. (Class C)
+BRK.B: Berkshire Hathaway Inc.
+TSLA: Tesla, Inc.
+JPM: JPMorgan Chase & Co.
+WMT: Walmart Inc.
+LLY: Eli Lilly and Company
+V: Visa Inc.
+ORCL: Oracle Corporation
+NFLX: Netflix, Inc.
+MA: Mastercard Incorporated
+XOM: Exxon Mobil Corporation
+COST: Costco Wholesale Corporation
+JNJ: Johnson & Johnson

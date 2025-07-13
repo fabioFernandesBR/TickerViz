@@ -13,3 +13,15 @@ Implement the following architecture: Front End <---> Back End <---> Yahoo Finan
   2. Execute local calculations via JavaScript (day-by-day % growth, taking as day 0 the day selected by user in the interactive chart).
   3. Display data in interactive charts.
 So, once data is transferred to Front End, the calculations should be fast, allowing continuous display of downloaded and calculated data.
+
+
+
+### To create and activate virtual environment
+to create: python -m venv .venv
+to activate: .\.venv\Scripts\activate
+
+### To install dependencies
+pip install -r requirements.txt
+
+### To run locally
+flask run --host 0.0.0.0 --port 5000 --reload
